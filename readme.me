@@ -1,0 +1,140 @@
+
+#  API de Notícias com Django REST Framework
+
+Uma API RESTful simples para gerenciamento de notícias, autores, categorias e comentários.
+
+Desenvolvido com **Django** e **Django REST Framework**.
+
+---
+
+##  Funcionalidades
+
+- CRUD completo para:
+  - Categorias (`/api/categorias/`)
+  - Autores (`/api/autores/`)
+  - Notícias (`/api/noticias/`)
+  - Comentários (`/api/comentarios/`)
+- Serialização automática com `ModelSerializer`
+- Navegação via interface web do DRF
+
+---
+
+##  Instalação
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repo.git
+cd nome-do-repo
+````
+
+2. **Crie um ambiente virtual e ative:**
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+3. **Instale as dependências:**
+
+```bash
+pip install -r requirements.txt
+```
+
+> Exemplo de dependências:
+>
+> ```
+> Django>=4.2
+> djangorestframework>=3.14
+> ```
+
+4. **Execute as migrações:**
+
+```bash
+python manage.py migrate
+```
+
+5. **Crie um superusuário (opcional):**
+
+```bash
+python manage.py createsuperuser
+```
+
+6. **Execute o servidor:**
+
+```bash
+python manage.py runserver
+```
+
+Acesse em: `http://127.0.0.1:8000/api/`
+
+---
+
+## 🔗 Endpoints da API
+
+| Recurso     | Endpoint Base       | Descrição           |
+| ----------- | ------------------- | ------------------- |
+| Categorias  | `/api/categorias/`  | CRUD de categorias  |
+| Autores     | `/api/autores/`     | CRUD de autores     |
+| Notícias    | `/api/noticias/`    | CRUD de notícias    |
+| Comentários | `/api/comentarios/` | CRUD de comentários |
+
+> Todos os endpoints aceitam os métodos: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
+
+---
+
+## 🛠 Exemplo de Requisições
+
+### Criar uma notícia (POST `/api/noticias/`)
+
+```json
+{
+  "titulo": "Nova funcionalidade no site",
+  "conteudo": "Detalhes sobre a nova funcionalidade...",
+  "autor": 1,
+  "categoria": 2,
+  "publicada": true
+}
+```
+
+### Obter todas as notícias (GET `/api/noticias/`)
+
+```http
+GET /api/noticias/
+```
+
+---
+
+##  Testes
+
+Você pode usar ferramentas como:
+
+* [Postman](https://www.postman.com/)
+* [Insomnia](https://insomnia.rest/)
+* `curl` via terminal
+* Interface do Django REST Framework (`/api/`)
+
+---
+
+##  Estrutura do Projeto
+
+```
+meu_projeto/
+├── meu_app/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+├── meu_projeto/
+│   ├── settings.py
+│   ├── urls.py
+├── manage.py
+└── requirements.txt
+```
+
+---
+
+##  Autor 
+
+Desenvolvido por ARAMEL JOÃO.
